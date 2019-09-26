@@ -2,17 +2,9 @@ kind: pipeline
 name: default
 
 steps:
-- name: test
-  image: redis
+- name: frontend
+  image: node
   commands:
-  - sleep 5
-  - redis-cli -h redis ping
-  - redis-cli -h redis set FOO bar
-  - redis-cli -h redis get FOO
-
-services:
-- name: redis
-  image: redis
-  ports:
-  - 6379
+  - npm ci
+  - npm run test:unit
 
