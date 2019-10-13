@@ -7,4 +7,6 @@ steps:
   commands:
   - npm ci
   - npm run test:unit
+  - npm ci
+
 
